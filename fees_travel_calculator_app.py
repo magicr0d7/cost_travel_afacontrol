@@ -6,6 +6,8 @@ TRAJET_COST_1H_4H = 250.0
 TRAJET_COST_4H_8H = 500.0
 TRAJET_COST_OVER_8H = 0  # À valider manuellement
 
+st.set_page_config(page_title="Calculateur de frais de déplacement", page_icon="🚗")
+
 # Function to calculate the total costs
 def calculate_travel_costs(duration_hours, km_total, hotel_nights, toll_fees, parking_fees, flight_or_train_costs):
     # Calculer les frais de mise à disposition selon la durée
@@ -58,4 +60,4 @@ flight_or_train_costs = st.number_input("Billet avion / train (€)", min_value=
 
 if st.button("Calculer les frais"):
     total_cost = calculate_travel_costs(duration_hours, km_total, hotel_nights, toll_fees, parking_fees, flight_or_train_costs)
-    st.write(f"Le montant total des frais de déplacement est de {total_cost} euros.")
+    st.info(f"Le montant total des frais de déplacement est de {total_cost} euros.")
