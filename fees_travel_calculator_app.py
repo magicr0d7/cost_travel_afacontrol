@@ -1,6 +1,7 @@
 import streamlit as st
 st.logo('https://www.afacontrole.fr/wp-content/uploads/2022/04/AFA-CONTROLE-Verifications-reglementaires-logo.png')
-COST_PER_KM = 0.427  # Barème kilométrique 2023
+
+COST_PER_KM = 0.45  # Barème kilométrique 2023
 HOTEL_COST = 150   # Nuit d'hôtel (modifiable selon la région)
 TRAJET_COST_1H_4H = 250.0
 TRAJET_COST_4H_8H = 500.0
@@ -36,6 +37,7 @@ st.subheader("Frais de mise à disposition")
 col1, col2 = st.columns(2)
 with col1:
     duration_hours = st.number_input("Durée en h du déplacement", min_value=0, step=1)
+    
 with col2:
     st.write('P.U. : 250 € | 4 à 8h de trajet : 500 €')
     st.write("Au-delà de 8h : montant à faire valider par le siège avant envoi au client.")
