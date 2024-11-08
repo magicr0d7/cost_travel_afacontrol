@@ -42,7 +42,7 @@ col1, col2 = st.columns(2)
 with col1:
     km_total = st.number_input("Nombre de Km total", min_value=0, step=1)
 with col2:
-    cost_per_km = st.number_input("Coût au km (€), par défaut : 0.427", min_value=0.1, step=0.01, value=0.427)
+    cost_per_km = st.number_input("Coût au km (€)", min_value=0.01, step=0.01)
 
 col1, col2 = st.columns(2)  
 with col1:
@@ -58,6 +58,6 @@ flight_or_train_costs = st.number_input("Billet avion / train (€)", min_value=
 if st.button("Calculer les frais"):
     if duration_hours < 8:
         total_cost = calculate_travel_costs(duration_hours, km_total, hotel_nights, toll_fees, parking_fees, flight_or_train_costs, cost_per_km, hotel_cost)
-        st.info(f"Le montant total des frais de déplacement est de {total_cost:.2f} euros.")
+        st.info(f"Le montant total des frais de déplacement est de {total_cost:.3f} euros.")
     else:
         st.error("Le montant pour un trajet de plus de 8h doit être validé par le siège.")
