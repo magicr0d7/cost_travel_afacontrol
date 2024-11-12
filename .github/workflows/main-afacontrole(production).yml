@@ -68,6 +68,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       
+      - name: 'Wait for any previous deployments'
+        run: sleep 30
+      
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
@@ -75,3 +78,4 @@ jobs:
           app-name: 'afacontrole'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          startup-command: 'bash startup.sh'
