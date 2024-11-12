@@ -27,6 +27,16 @@ def calculate_travel_costs(duration_hours, km_total, hotel_nights, toll_fees, pa
     return total_cost
 
 st.markdown("# Calculateur de frais de déplacement")
+
+st.info("""Spécificités : 
+
+Voici les frais d’hôtel à indiquer  : 
+- NATUP et filiale / UAPL et filiale facturer :  80 /90 € Jour + frais Km et péage classique 
+- SEVEPI / TEREOS / SALEFACTORY    100/ 110 € Jour + frais Km et péage classique 
+- Super U :    150 € /Jour + 
+
+Inférieur à 300 kms	au réel () / De 300 à 499 kms	150 € / De 500 à 699 kms	175 € / De 700 à 999 kms	240 € / Supérieur à 1000 kms	300 €""", icon="💡")
+
 st.subheader("Frais de mise à disposition")
 col1, col2 = st.columns(2)
 with col1:
