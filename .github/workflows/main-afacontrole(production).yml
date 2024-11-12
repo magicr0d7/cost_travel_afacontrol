@@ -29,7 +29,6 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
           pip install streamlit
         
       - name: Run Streamlit
@@ -64,6 +63,10 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
+      - name: 'Login to Azure'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
       
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
